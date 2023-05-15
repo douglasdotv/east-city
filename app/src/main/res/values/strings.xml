@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">East City</string>
     <string name="welcome_message">Welcome to East City</string>
+    <string name="description">Description</string>
 </resources>
