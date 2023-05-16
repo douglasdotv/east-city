@@ -1,8 +1,8 @@
-package br.com.dv.eastcity
+package br.com.dv.eastcity.model
 
 import java.math.BigDecimal
 
-class Car(
+data class Car(
     val name: String,
     val description: String,
     val price: BigDecimal
