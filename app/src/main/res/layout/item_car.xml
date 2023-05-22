@@ -14,7 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/item_name" />
+        tools:text="@string/car_name" />
 
     <TextView
         android:id="@+id/tvDescription"
@@ -26,7 +26,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvName"
-        tools:text="@string/item_description" />
+        tools:text="@string/car_description" />
 
     <TextView
         android:id="@+id/tvPrice"
@@ -38,6 +38,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvDescription"
-        tools:text="@string/item_price" />
+        tools:text="@string/car_price" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

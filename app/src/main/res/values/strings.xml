@@ -1,7 +1,11 @@
 <resources>
     <string name="app_name">East City</string>
     <string name="welcome_message">Welcome to East City</string>
-    <string name="item_name">Item</string>
-    <string name="item_description">Description</string>
-    <string name="item_price">Price</string>
+    <string name="car_name">Name</string>
+    <string name="car_description">Description</string>
+    <string name="car_price">Price</string>
+    <string name="hint_car_name">Name</string>
+    <string name="hint_car_description">Description</string>
+    <string name="hint_car_price">Price</string>
+    <string name="btn_save">Save</string>
 </resources>
