@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import br.com.dv.eastcity.R
+import br.com.dv.eastcity.dao.CarDao
 import br.com.dv.eastcity.model.Car
 import java.math.BigDecimal
 
@@ -22,7 +23,7 @@ class CarFormActivity : AppCompatActivity() {
             val priceString = findViewById<EditText>(R.id.etPrice).text.toString()
 
             val price = when {
-                (priceString.isBlank()) -> BigDecimal.ZERO
+                priceString.isBlank() -> BigDecimal.ZERO
                 else -> priceString.toBigDecimal()
             }
 
@@ -32,8 +33,11 @@ class CarFormActivity : AppCompatActivity() {
                 price = price
             )
 
+            CarDao.add(newCar)
             // Show the new entry in the logcat
             Log.i("CarFormActivity", "New car: $newCar")
+
+            finish()
         }
     }
 
