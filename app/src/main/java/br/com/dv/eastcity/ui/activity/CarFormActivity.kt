@@ -34,7 +34,6 @@ class CarFormActivity : AppCompatActivity() {
             )
 
             CarDao.add(newCar)
-            // Show the new entry in the logcat
             Log.i("CarFormActivity", "New car: $newCar")
 
             finish()

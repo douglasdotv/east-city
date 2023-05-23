@@ -7,7 +7,7 @@ import br.com.dv.eastcity.model.Car
 import br.com.dv.eastcity.databinding.ItemCarBinding
 
 class CarListAdapter(
-    private val cars: List<Car>
+    private var cars: List<Car>
 ) : RecyclerView.Adapter<CarListAdapter.CarViewHolder>() {
 
     inner class CarViewHolder(
@@ -32,6 +32,11 @@ class CarListAdapter(
 
     override fun onBindViewHolder(holder: CarViewHolder, position: Int) {
         holder.bind(cars[position])
+    }
+
+    fun updateCars(newCars: List<Car>) {
+        cars = newCars
+        notifyDataSetChanged() // DiffUtil can be used here
     }
 
 }

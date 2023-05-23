@@ -5,10 +5,9 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import br.com.dv.eastcity.R
-import br.com.dv.eastcity.model.Car
-import br.com.dv.eastcity.ui.adapter.CarListAdapter
+import br.com.dv.eastcity.dao.CarDao
 import br.com.dv.eastcity.databinding.ActivityMainBinding
-import java.math.BigDecimal
+import br.com.dv.eastcity.ui.adapter.CarListAdapter
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,18 +20,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.rvCars.apply {
-            adapter = CarListAdapter(cars = listOf(
-                Car(
-                    name = "Mazda RX-7",
-                    description = "Mazda RX-7 Type RS-R",
-                    price = BigDecimal("27737")
-                ),
-                Car(
-                    name = "Fusca",
-                    description = "Fusca 1972",
-                    price = BigDecimal("10000")
-                ),
-            ))
+            adapter = CarListAdapter(CarDao.findAll())
         }
 
         binding.floatingActionButton.setOnClickListener {
@@ -43,4 +31,10 @@ class MainActivity : AppCompatActivity() {
 
         Toast.makeText(this, R.string.welcome_message, Toast.LENGTH_SHORT).show()
     }
+
+    override fun onResume() {
+        super.onResume()
+        (binding.rvCars.adapter as? CarListAdapter)?.updateCars(CarDao.findAll())
+    }
+
 }
