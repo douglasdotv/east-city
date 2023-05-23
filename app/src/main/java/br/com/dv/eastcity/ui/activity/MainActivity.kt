@@ -1,5 +1,6 @@
 package br.com.dv.eastcity.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -32,6 +33,12 @@ class MainActivity : AppCompatActivity() {
                     price = BigDecimal("10000")
                 ),
             ))
+        }
+
+        binding.floatingActionButton.setOnClickListener {
+            Intent(this, CarFormActivity::class.java).apply {
+                startActivity(this)
+            }
         }
 
         Toast.makeText(this, R.string.welcome_message, Toast.LENGTH_SHORT).show()
